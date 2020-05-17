@@ -14,6 +14,9 @@ public class Programa {
 		
 		Seller seller = new Seller(1, "bob", "bob@gmail.com", new Date(), 3000.0, obj  );
 		
+		SellerDao sellerdao = DaoFactory.createSellerDao();
+		
+		
 		System.out.println(seller);
 
 		

@@ -6,23 +6,14 @@ public class Programa {
 
 	public static void main(String[] args) {
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 		SellerDao sellerdao = DaoFactory.createSellerDao();
 
 		System.out.println("=== TESTE FIND BYID ===");
 		Seller seller = sellerdao.findById(3);
 
 		System.out.println(seller);
+		
+		System.out.println();
 		
 		System.out.println("=== TESTE2 FIND BY DEPARTMENT===");
 		
@@ -33,6 +24,16 @@ public class Programa {
 			System.out.println(s);
 		}
 		
+		System.out.println();
+		
+		System.out.println("=== TESTE 3 FIND ALL===");
+		
+		
+	    list = SellerDaoJDBC.findAll();
+		
+		for(Seller s : list) {
+			System.out.println(s);
+		}
 		
 		
 		

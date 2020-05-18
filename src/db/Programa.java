@@ -1,5 +1,6 @@
 package db;
 
+import java.util.Date;
 import java.util.List;
 
 public class Programa {
@@ -12,30 +13,37 @@ public class Programa {
 		Seller seller = sellerdao.findById(3);
 
 		System.out.println(seller);
-		
+
 		System.out.println();
-		
+
 		System.out.println("=== TESTE2 FIND BY DEPARTMENT===");
-		
+
 		Department department = new Department(2, null);
 		List<Seller> list = SellerDaoJDBC.findByDepartment(department);
-		
-		for(Seller s : list) {
+
+		for (Seller s : list) {
 			System.out.println(s);
 		}
-		
+
 		System.out.println();
-		
+
 		System.out.println("=== TESTE 3 FIND ALL===");
-		
-		
-	    list = SellerDaoJDBC.findAll();
-		
-		for(Seller s : list) {
+
+		list = SellerDaoJDBC.findAll();
+
+		for (Seller s : list) {
 			System.out.println(s);
 		}
+
+		System.out.println();
+
+		System.out.println("=== TESTE 4 INSERÇÃO SELLER ===");
 		
+		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.00, department);
 		
+		sellerdao.insert(newSeller);
+		
+		System.out.println("Inserido com sucesso: " + newSeller.getId());
 		
 
 	}

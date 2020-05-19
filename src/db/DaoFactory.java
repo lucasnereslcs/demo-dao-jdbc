@@ -7,4 +7,9 @@ public class DaoFactory {
 	{
 		return new SellerDaoJDBC(DB.getConnection());
 	}
+	
+	public static DepartmentDao DepartmentDao()
+	{
+		return new DepartmentDaoJDBC(DB.getConnection());
+	}
 }

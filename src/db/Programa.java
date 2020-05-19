@@ -45,6 +45,18 @@ public class Programa {
 		
 		System.out.println("Inserido com sucesso: " + newSeller.getId());
 		
+		System.out.println();
+		
+		System.out.println("=== TESTE 5 SELLER UPDATE ===");
+		
+		seller = sellerdao.findById(1); 
+		
+		seller.setName("Maria");
+		
+		sellerdao.update(seller);
+		
+		System.out.println("Atualização efetuada");
+		
 
 	}
 

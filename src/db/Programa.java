@@ -2,10 +2,13 @@ package db;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Programa {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
 
 		SellerDao sellerdao = DaoFactory.createSellerDao();
 
@@ -56,6 +59,21 @@ public class Programa {
 		sellerdao.update(seller);
 		
 		System.out.println("Atualização efetuada");
+		
+		
+		
+		System.out.println("\n=== TESTE 6 SELLER DELET ===");
+		
+		
+		System.out.println("\nDigite o codigo: ");
+	
+		int codigo = sc.nextInt();
+		
+		sellerdao.deleteById(codigo);
+		
+		System.out.println("Atualização efetuada");
+		
+		sc.close();
 		
 
 	}
